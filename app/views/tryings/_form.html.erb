@@ -1,0 +1,32 @@
+<%= form_with(model: trying, local: true) do |form| %>
+  <% if trying.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(trying.errors.count, "error") %> prohibited this trying from being saved:</h2>
+
+      <ul>
+        <% trying.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :one %>
+    <%= form.number_field :one %>
+  </div>
+
+  <div class="field">
+    <%= form.label :two %>
+    <%= form.text_field :two %>
+  </div>
+
+  <div class="field">
+    <%= form.label :three %>
+    <%= form.check_box :three %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
